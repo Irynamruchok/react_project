@@ -1,8 +1,6 @@
 import React, {FC} from 'react';
 import {IGenre} from "../../interfaces/IGenre";
 import {Link} from "react-router-dom";
-
-
 interface IProps {
     genre: IGenre
 }
