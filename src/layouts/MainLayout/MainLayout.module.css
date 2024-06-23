@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+
+.mainLayout {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Nunito", sans-serif;
+    font-style: normal;
+}
+.mainLayout a {
+    font-weight: bold;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+ .darkTheme {
+     background: rgb(36,59,85);
+     background: linear-gradient(0deg, rgba(36,59,85,1) 0%, rgba(20,30,48,1) 100%);
+     color: #fff;
+}
+
+ .darkTheme a {
+     text-decoration: none;
+     color: white;
+ }
+.darkTheme a:hover{
+    transform: scale(1.1);
+    color: lightblue;
+}
+
+ .lightTheme {
+     background: rgb(224,234,252);
+     background: linear-gradient(0deg, rgba(224,234,252,1) 0%, rgba(207,222,243,1) 100%);
+     color: #333;
+}
+
+ .lightTheme a {
+     text-decoration: none;
+     color: black;
+ }
+.lightTheme a:hover{
+    transform: scale(1.1);
+    color: rgb(36,59,85);
+}
+
+.mainContainer {
+    width: 90vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}

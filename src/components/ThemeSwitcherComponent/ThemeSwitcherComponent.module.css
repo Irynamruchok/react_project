@@ -1,0 +1,31 @@
+.themeToggleContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.toggleButton {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    background-color: #2b5876;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toggleCircleDark {
+    transform: translateX(30px);
+}
+.toggleCircle {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
