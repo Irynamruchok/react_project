@@ -16,7 +16,7 @@ const MovieCardComponent: FC<IProps> = ({movie}) => {
         <div className={css.mainContainer}>
             <Link to={`/movies/${movie.id}`}>
                 <div className={css.imageContainer}>
-                    <img style={{width: '200px'}} src={movie.posterUrl} alt={movie.title}/>
+                    <img src={movie.posterUrl} alt={movie.title}/>
                     <div className={css.overlay}>
                         <div className={css.overlayContent}>
                             <FontAwesomeIcon icon={faPlay} className={css.icon}/>
