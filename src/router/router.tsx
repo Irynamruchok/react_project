@@ -5,6 +5,7 @@ import GenresPage from "../pages/GenresPage/GenresPage";
 import MovieDetailsPage from "../pages/MovieDetailsPage/MovieDetailsPage";
 import MovieByGenrePage from "../pages/MovieByGenrePage/MovieByGenrePage";
 import SearchResultsPage from "../pages/SearchResultsPage/SearchResultsPage";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 
 const router = createBrowserRouter([
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
             {
                 path: '/search/:name',
                 element: <SearchResultsPage/>
+            },
+            {
+                path:'*',
+                element: <ErrorPage/>
             },
             {
                 path: '/genres',
