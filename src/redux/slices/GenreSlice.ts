@@ -1,23 +1,23 @@
-import {createSlice} from "@reduxjs/toolkit";
+import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {IGenre} from "../../interfaces/IGenre";
 import {getAllGenres} from "../../thunks/genreThunks";
 
 interface IState {
     genres: IGenre[];
-    error:string | null
+    error: string | null
 }
 
-const initialState:IState = {
+const initialState: IState = {
     genres: [],
     error: null
 }
 
 const genreSlice = createSlice({
-    name:'genreSlice',
+    name: 'genreSlice',
     initialState: initialState,
     reducers: {},
     extraReducers: builder => builder
-        .addCase(getAllGenres.fulfilled, (state, action) => {
+        .addCase(getAllGenres.fulfilled, (state, action: PayloadAction<{ genres: IGenre[] }>) => {
             state.genres = action.payload.genres
         })
 })

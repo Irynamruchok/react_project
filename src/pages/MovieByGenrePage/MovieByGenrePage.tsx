@@ -6,24 +6,31 @@ import MoviesByGenreComponent from "../../components/MoviesByGenreComponent/Movi
 import PaginationComponent from "../../components/PaginationComponent/PaginationComponent";
 
 const MovieByGenrePage = () => {
-    const [query, setQuery] = useSearchParams({page:'1'})
-    const {id:genreId} = useParams<{id:string}>()
-    const {moviesByGenres,totalPages, currentPage} = useAppSelector(state => state.movieByGenre)
+
+    const [query, setQuery] = useSearchParams({page: '1'})
+
+    const {id: genreId} = useParams<{ id: string }>()
+
+    const {moviesByGenres, totalPages, currentPage} = useAppSelector(
+        state => state.movieByGenre)
+
     const dispatch = useAppDispatch()
+
     useEffect(() => {
-        dispatch(moviesByGenresActions.getMoviesByGenres({page: query.get('page' || '1'), genreId}))
-        console.log(moviesByGenres)
-    },[genreId,query])
+        dispatch(moviesByGenresActions.getMoviesByGenres(
+            {page: query.get('page' || '1'), genreId}))
+
+    }, [genreId, query])
 
     const onPageChange = (newPage: number) => {
         dispatch(setCurrentPage(newPage))
-        setQuery({page:newPage.toString()})
+        setQuery({page: newPage.toString()})
     }
 
     return (
         <div>
-           <MoviesByGenreComponent movies={moviesByGenres}/>
-            <PaginationComponent currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} />
+            <MoviesByGenreComponent movies={moviesByGenres}/>
+            <PaginationComponent currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange}/>
         </div>
     );
 };

@@ -4,9 +4,10 @@ import GenreComponent from "../GenreComponent/GenreComponent";
 import css from './GenresComponent.module.css'
 
 interface IProps {
-    genres:IGenre[]
+    genres: IGenre[]
 }
-const GenresComponent :FC<IProps>= ({genres}) => {
+
+const GenresComponent: FC<IProps> = ({genres}) => {
     return (
         <div className={css.genresContainer}>
             {

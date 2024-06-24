@@ -6,7 +6,8 @@
     background-color: #2b5876;
     border-radius: 20px;
 }
-.input{
+
+.input {
     width: 80%;
     padding: 10px 40px 10px 20px;
     border: none;
@@ -14,22 +15,27 @@
     border-radius: 20px;
     background-color: #2b5876;
 }
+
 .input::placeholder {
     color: white;
 }
+
 .input:focus {
     background-color: #2b5876;
     color: white;
 }
-.searchContainer button{
+
+.searchContainer button {
     background-color: transparent;
     border: none;
     cursor: pointer;
     transition: color 0.3s ease;
 }
+
 .searchIcon {
     color: white;
 }
+
 .error {
     color: red;
     margin-top: 10px;

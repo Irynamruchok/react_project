@@ -6,13 +6,13 @@ import {searchMoviesReducer} from "./slices/SearchMovieSlice";
 import {themeReducer} from "./slices/ThemeSlice";
 
 const store = configureStore({
-reducer: {
-    movie: movieReducer,
-    genre: genreReducer,
-    movieByGenre: movieByGenreReducer,
-    searchMovie: searchMoviesReducer,
-    theme: themeReducer
-}
+    reducer: {
+        movie: movieReducer,
+        genre: genreReducer,
+        movieByGenre: movieByGenreReducer,
+        searchMovie: searchMoviesReducer,
+        theme: themeReducer
+    }
 })
 
 type RootState = ReturnType<typeof store.getState>

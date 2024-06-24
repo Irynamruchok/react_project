@@ -4,7 +4,7 @@ import {apiToken} from "../tokens/apiToken";
 
 const axiosInstance = axios.create({
     baseURL: baseUrl,
-    headers:{}
+    headers: {}
 })
 
 axiosInstance.interceptors.request.use(

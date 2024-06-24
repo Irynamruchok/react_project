@@ -9,32 +9,32 @@ import SearchResultsPage from "../pages/SearchResultsPage/SearchResultsPage";
 
 const router = createBrowserRouter([
     {
-        path:'/',
-        element:<MainLayout/>,
-        children:[
+        path: '/',
+        element: <MainLayout/>,
+        children: [
             {
                 index: true,
                 element: <Navigate to={'/movies'} replace/>
             },
             {
-                path:'/movies',
-                element:<MoviesListPage/>
+                path: '/movies',
+                element: <MoviesListPage/>
             },
             {
-                path:'/movies/:id',
-                element:<MovieDetailsPage/>
+                path: '/movies/:id',
+                element: <MovieDetailsPage/>
             },
             {
-                path:'/search/:name',
-                element:<SearchResultsPage/>
+                path: '/search/:name',
+                element: <SearchResultsPage/>
             },
             {
-                path:'/genres',
-                element:<GenresPage/>,
+                path: '/genres',
+                element: <GenresPage/>,
                 children: [
                     {
-                        path:':id',
-                        element:<MovieByGenrePage/>
+                        path: ':id',
+                        element: <MovieByGenrePage/>
                     }
                 ]
             }

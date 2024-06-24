@@ -9,17 +9,14 @@ const MainLayout = () => {
     const {isDarkMode} = useAppSelector(state => state.theme)
 
     return (
-
-            <div className={` ${isDarkMode ? css.darkTheme : css.lightTheme}`}>
-                <div className={css.mainLayout} >
+        <div className={` ${isDarkMode ? css.darkTheme : css.lightTheme}`}>
+            <div className={css.mainLayout}>
                 <div className={css.mainContainer}>
                     <HeaderComponent/>
                     <Outlet/>
                 </div>
             </div>
         </div>
-
-
     );
 };
 

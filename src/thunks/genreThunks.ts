@@ -9,11 +9,10 @@ const getAllGenres = createAsyncThunk(
             const response = await genreService.getAllGenres()
             return thunkAPI.fulfillWithValue(response.data)
 
-        }catch (e) {
+        } catch (e) {
             const error = e as AxiosError
             return thunkAPI.rejectWithValue(error)
         }
-
     }
 )
 

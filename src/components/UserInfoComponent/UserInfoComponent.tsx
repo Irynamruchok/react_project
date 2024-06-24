@@ -4,9 +4,7 @@ import css from './UserInfoComponent.module.css'
 const UserInfoComponent = () => {
     return (
         <div>
-
-<div className={css.infoCircle}><span>Name</span></div>
-
+            <div className={css.infoCircle}><span>Name</span></div>
         </div>
     );
 };

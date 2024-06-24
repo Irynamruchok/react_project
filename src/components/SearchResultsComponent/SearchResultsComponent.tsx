@@ -6,11 +6,12 @@ import css from './SearchResultsComponent.module.css'
 interface IProps {
     movies: IMovieWithPoster[]
 }
-const SearchResultsComponent :FC<IProps>= ({movies}) => {
+
+const SearchResultsComponent: FC<IProps> = ({movies}) => {
     return (
         <div className={css.mainContainer}>
             {
-                movies&&
+                movies &&
                 movies.map((movie) => <MovieCardComponent key={movie.id} movie={movie}/>)
             }
         </div>

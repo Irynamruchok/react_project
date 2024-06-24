@@ -5,22 +5,26 @@ import {movieActions} from "../../redux/slices/MovieSlice";
 import MovieDetailsComponent from "../../components/MovieDetailsComponent/MovieDetailsComponent";
 
 const MovieDetailsPage = () => {
-    const {id} = useParams<{id:string}>()
-    const {movieById} = useAppSelector(state => state.movie)
+
+    const {id} = useParams<{ id: string }>()
+
+    const {movieById} = useAppSelector(
+        state => state.movie)
+
     const dispatch = useAppDispatch()
+
     useEffect(() => {
         if (id) {
             dispatch(movieActions.getMovieById(id))
         }
+    }, [id])
 
-    },[id])
-    console.log(movieById)
     return (
         <div>
-            {movieById &&
-            <MovieDetailsComponent movie={movieById}/>
-          }
-
+            {
+                movieById &&
+                <MovieDetailsComponent movie={movieById}/>
+            }
         </div>
     );
 };

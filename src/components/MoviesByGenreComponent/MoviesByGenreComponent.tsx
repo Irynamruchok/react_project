@@ -8,14 +8,14 @@ interface IProps {
     movies: IMovieWithPoster[],
 
 }
-const MoviesByGenreComponent:FC<IProps>= ({movies}) => {
+
+const MoviesByGenreComponent: FC<IProps> = ({movies}) => {
     return (
         <div className={css.mainContainer}>
             {
-                movies.map((movie) => <MovieCardComponent key={movie.id} movie={movie} />)
+                movies &&
+                movies.map((movie) => <MovieCardComponent key={movie.id} movie={movie}/>)
             }
-
-
         </div>
     );
 };

@@ -1,18 +1,19 @@
-import { createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {IMovieWithPoster} from "../../interfaces/IMovieWithPoster";
 import {getAllMovies, getMovieById} from "../../thunks/movieThunks";
 
 
 interface IState {
-    currentPage:number;
+    currentPage: number;
     movieById: IMovieWithPoster | null;
-    movies:IMovieWithPoster[];
-    totalPages:number
-    totalResults:number
+    movies: IMovieWithPoster[];
+    totalPages: number
+    totalResults: number
 }
-const initialState:IState = {
+
+const initialState: IState = {
     currentPage: 1,
-    movieById:null,
+    movieById: null,
     movies: [],
     totalPages: 0,
     totalResults: 0
@@ -20,10 +21,10 @@ const initialState:IState = {
 
 
 const movieSlice = createSlice({
-    name:'movieSlice',
+    name: 'movieSlice',
     initialState: initialState,
-    reducers:{
-        setCurrentPage(state,action:PayloadAction<number>) {
+    reducers: {
+        setCurrentPage(state, action: PayloadAction<number>) {
             state.currentPage = action.payload
         }
     },
@@ -34,22 +35,21 @@ const movieSlice = createSlice({
             state.totalPages = action.payload.totalPages
             state.totalResults = action.payload.totalResults
         })
-        .addCase(getMovieById.fulfilled,(state, action) => {
+        .addCase(getMovieById.fulfilled, (state, action) => {
             state.movieById = action.payload.movieById
         })
-
 
 
 })
 
 export const {setCurrentPage} = movieSlice.actions
+
 const {reducer: movieReducer, actions} = movieSlice
+
 const movieActions = {
     ...actions,
     getAllMovies,
     getMovieById,
-
-
 }
 
 export {

@@ -7,15 +7,18 @@
     justify-content: space-between;
     align-items: center;
 }
-.imageContainer{
+
+.imageContainer {
     position: relative;
     overflow: hidden;
 }
+
 .imageContainer img {
     display: block;
     width: 100%;
     transition: filter 0.3s ease;
 }
+
 .imageContainer:hover img {
     filter: blur(5px);
 }

@@ -7,28 +7,34 @@ import MoviesListComponent from "../../components/MoviesListComponent/MoviesList
 
 
 const MoviesListPage = () => {
-    const [query, setQuery] = useSearchParams({page:'1'})
-    const {movies,currentPage, totalPages} = useAppSelector(state => state.movie)
+
+    const [query, setQuery] = useSearchParams({page: '1'})
+
+    const {movies, currentPage, totalPages} = useAppSelector(
+        state => state.movie)
+
     const dispatch = useAppDispatch()
 
     useEffect(() => {
-        dispatch(movieActions.getAllMovies(query.get('page') || '1'))
+        dispatch(movieActions.getAllMovies(
+            query.get('page') || '1'))
+    }, [query])
 
-    },[query])
-
-    const onPageChange = (newPage:number) => {
+    const onPageChange = (newPage: number) => {
         dispatch(setCurrentPage(newPage))
         setQuery({page: newPage.toString()})
     }
 
     return (
         <div>
-            <div >
+            <div>
                 <MoviesListComponent movies={movies}/>
             </div>
 
-
-            <PaginationComponent currentPage={currentPage}  totalPages={totalPages} onPageChange={onPageChange} />
+            <PaginationComponent
+                currentPage={currentPage}
+                totalPages={totalPages}
+                onPageChange={onPageChange}/>
         </div>
     );
 };
